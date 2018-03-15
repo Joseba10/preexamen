@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { alquiler } from '../../model/alquiler';
+import { Casa } from '../../model/casa';
 import { ServicioService } from '../../providers/servicio.service';
 import { servicio } from '../../model/servicio';
 
@@ -11,7 +11,7 @@ import { servicio } from '../../model/servicio';
 export class DetalleComponent implements OnInit {
 
 
-  vivienda: alquiler[];
+  vivienda: Casa[];
   servicios: ServicioService[];
 
 
@@ -22,7 +22,7 @@ export class DetalleComponent implements OnInit {
 
   ngOnInit() {
 
-    console.log('TodosComponent ngOnInit');
+   /* console.log('TodosComponent ngOnInit');
     this.servicioService.getCasas().subscribe(
       resultado => {
         console.debug('peticion correcta %o', resultado);
@@ -31,9 +31,9 @@ export class DetalleComponent implements OnInit {
       error => {
         console.warn('peticion incorrecta %o', error);
       }
-    );//subscribe
+    );//subscribe*/
   }
-
+/*
   mapeo(result: any) {
 
     let caracteristicas: alquiler, servicios: servicio;
@@ -47,7 +47,7 @@ export class DetalleComponent implements OnInit {
       caracteristicas.alquiler = el.alquiler;
 
 
-      el.service.forEach(s => {
+      el.servicio.forEach(s => {
         servicios = new servicio();
         servicios.nombre = s.nombre;
         servicios.disponible = s.disponible;
@@ -68,5 +68,5 @@ export class DetalleComponent implements OnInit {
     })
 
 
-}
+}*/
 }

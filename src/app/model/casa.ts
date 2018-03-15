@@ -1,7 +1,7 @@
 import { ServicioService } from "../providers/servicio.service";
 import { servicio } from "./servicio";
 
-export class alquiler{  
+export class Casa{  
   
   nombre:string;
   precio:number;
@@ -9,7 +9,7 @@ export class alquiler{
   habitaciones:number;
   foto:string;
   direccion:string;
- servicio:servicio;
+ servicio:servicio[];
 
 
 
@@ -22,10 +22,9 @@ this.precio=0;
 this.alquiler=false;
 this.habitaciones=0;
 this.direccion="";
+this.servicio=[];
+this.foto='assets/imgs/casa.jpg';
 
-
-
-  this.foto='assets/imgs/casa.jpg';
 }
 
 }

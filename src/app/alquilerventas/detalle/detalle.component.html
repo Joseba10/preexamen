@@ -1,5 +1,5 @@
 
-<div   *ngFor="let resultado of todos" class="galeria .col-sm-6">
+<div   *ngFor="let resultado of caracteristicas" class="galeria .col-sm-6">
  
   <img src="{{resultado.foto}}">
  <!--  {{resultado | json}} -->
@@ -13,7 +13,7 @@
   <p *ngIf="!resultado.alquiler">Tipo: Venta</p>
   <div *ngFor="let servicios of servicio">
       <p>Servicios:</p>
-      <p>TV {{resultado.servicios.tv}}</p>
+      <p>TV {{resultado.servicios.nombre}}</p>
     </div>
 
 </div>

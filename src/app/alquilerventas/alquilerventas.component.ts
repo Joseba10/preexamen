@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ServicioService } from '../providers/servicio.service';
 import { FormGroup, FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
-import { alquiler } from '../model/alquiler';
 import { servicio } from '../model/servicio';
+import { Casa } from '../model/casa';
 
 @Component({
   selector: 'app-alquilerventas',
@@ -12,14 +12,14 @@ import { servicio } from '../model/servicio';
 export class AlquilerventasComponent implements OnInit {
 
 
-  todos: alquiler[];
+  vivienda: Casa[];
   
 
 
 
 
   constructor(public servicioService: ServicioService) {
-    this.todos = [];
+    this.vivienda = [];
 
 
 
@@ -42,18 +42,62 @@ export class AlquilerventasComponent implements OnInit {
 
 
   mapeo(result: any) {
+/*
+let c:casa,s:servicio;
 
-    let todo: alquiler;
+for (result => el{
+
+c=new casa();
+c.nombre=el.nombre
+
+for el.servicio => servicio{
+
+s=new servicio();
+s.nombre=servicio.nombre;
+c.servicios.push(s);
+
+
+}
+this.casa.push(c);
+  
+}
+
+*/
+
+
+
+
+    let caracteristicas: Casa; //servicios: servicio;
     result.forEach(el => {
-      todo = new alquiler();
-      todo.nombre = el.nombre;
-      todo.precio = el.precio;
-      todo.direccion = el.direccion;
-      todo.foto = el.foto;
-      todo.habitaciones = el.habitaciones;
-      todo.alquiler = el.alquiler;
-      this.todos.push(todo);
-    });
+      caracteristicas = new Casa();
+      caracteristicas.nombre = el.nombre;
+      caracteristicas.precio = el.precio;
+      caracteristicas.direccion = el.direccion;
+      caracteristicas.foto = el.foto;
+      caracteristicas.habitaciones = el.habitaciones;
+      caracteristicas.alquiler = el.alquiler;
 
-  }
+/*
+      el.servicio.forEach(s => {
+        servicios = new servicio();
+        servicios.nombre = s.nombre;
+        servicios.disponible = s.disponible;
+
+
+
+        caracteristicas.servicio.push(servicios);
+
+      }),
+*/
+        this.vivienda.push(caracteristicas);
+
+
+
+
+
+
+    })
+
+
+}
 }
