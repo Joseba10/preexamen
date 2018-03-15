@@ -26,3 +26,4 @@ this.infocasa= new Casa();
 
     
 }
+}
