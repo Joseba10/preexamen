@@ -26,17 +26,17 @@ Precio  <label class="center-block">min:</label>
 </div> 
 
 <hr>
+<div   *ngFor="let resultado of vivienda" (click)="seleccionarcasa()" class="galeria .col-sm-6  ">
 
 
-<app-detalle></app-detalle>
-<div   *ngFor="let resultado of todos" class="galeria .col-sm-6  ">
-
-
-  <img src="{{resultado.foto}}">
+  <img  src="{{resultado.foto}}">
 <p>Nombre: {{resultado.nombre}} Precio:  {{resultado.precio}}</p>
   
 
   </div>
+
+<app-detalle></app-detalle>
+
 
 
 </div>

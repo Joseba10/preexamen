@@ -1,5 +1,5 @@
 import { ServicioService } from "../providers/servicio.service";
-import { servicio } from "./servicio";
+import { Servicio } from "./servicio";
 
 export class Casa{  
   
@@ -9,7 +9,7 @@ export class Casa{
   habitaciones:number;
   foto:string;
   direccion:string;
- servicio:servicio[];
+ servicio:Servicio[];
 
 
 

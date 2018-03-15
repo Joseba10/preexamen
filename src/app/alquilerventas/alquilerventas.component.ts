@@ -1,48 +1,42 @@
-import { Component, OnInit } from '@angular/core';
-import { ServicioService } from '../providers/servicio.service';
-import { FormGroup, FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
-import { servicio } from '../model/servicio';
-import { Casa } from '../model/casa';
+import { Component, OnInit } from "@angular/core";
+import { ServicioService } from "../providers/servicio.service";
+import {
+  FormGroup,
+  FormBuilder,
+  Validators,
+  ReactiveFormsModule
+} from "@angular/forms";
+import { Servicio } from "../model/servicio";
+import { Casa } from "../model/casa";
 
 @Component({
-  selector: 'app-alquilerventas',
-  templateUrl: './alquilerventas.component.html',
-  styleUrls: ['./alquilerventas.component.scss']
+  selector: "app-alquilerventas",
+  templateUrl: "./alquilerventas.component.html",
+  styleUrls: ["./alquilerventas.component.scss"]
 })
 export class AlquilerventasComponent implements OnInit {
-
-
   vivienda: Casa[];
-  
-
-
-
+  casaSelect: Casa;
 
   constructor(public servicioService: ServicioService) {
     this.vivienda = [];
-
-
-
   }
 
   ngOnInit() {
-
-    console.log('TodosComponent ngOnInit');
+    console.log("TodosComponent ngOnInit");
     this.servicioService.getCasas().subscribe(
       resultado => {
-        console.debug('peticion correcta %o', resultado);
+        console.debug("peticion correcta %o", resultado);
         this.mapeo(resultado);
       },
       error => {
-        console.warn('peticion incorrecta %o', error);
+        console.warn("peticion incorrecta %o", error);
       }
-    );//subscribe
+    ); //subscribe
   }
 
-
-
   mapeo(result: any) {
-/*
+    /*
 let c:casa,s:servicio;
 
 for (result => el{
@@ -64,9 +58,6 @@ this.casa.push(c);
 
 */
 
-
-
-
     let caracteristicas: Casa; //servicios: servicio;
     result.forEach(el => {
       caracteristicas = new Casa();
@@ -77,7 +68,7 @@ this.casa.push(c);
       caracteristicas.habitaciones = el.habitaciones;
       caracteristicas.alquiler = el.alquiler;
 
-/*
+      /*
       el.servicio.forEach(s => {
         servicios = new servicio();
         servicios.nombre = s.nombre;
@@ -89,15 +80,17 @@ this.casa.push(c);
 
       }),
 */
-        this.vivienda.push(caracteristicas);
+      this.vivienda.push(caracteristicas);
+console.log("Se acaba de meter la informacion al array %a",caracteristicas);
+
+    });
+  }
 
 
+  seleccionarcasa(casa: Casa){
 
-
-
-
-    })
-
-
-}
+console.log("seleccionarcasa");
+   this.casaSelect= casa ;
+   console.log("Infomacion de casaSelect",this.casaSelect);
+  }
 }

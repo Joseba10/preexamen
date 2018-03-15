@@ -1,19 +1,15 @@
 
-<div   *ngFor="let resultado of caracteristicas" class="galeria .col-sm-6">
+<div   class="galeria .col-sm-6">
  
-  <img src="{{resultado.foto}}">
- <!--  {{resultado | json}} -->
+  <img src="{{infocasa.foto}}">
+ <!-- {{infocasa | json}}-->
 
-  <p>Nombre: {{resultado.nombre}} Precio {{resultado.precio}}</p>
-  <p> <i class="fa fa-map-marker" aria-hidden="true"></i> Direccion: {{resultado.direccion}} </p>
+  <p>Nombre: {{infocasa.nombre}} Precio {{infocasa.precio}}</p>
+  <p> <i class="fa fa-map-marker" aria-hidden="true"></i> Direccion: {{infocasa.direccion}} </p>
  
   
-  <p> <i class="fa fa-home" aria-hidden="true"></i> Habitaciones: {{resultado.habitaciones}} </p>
-  <p *ngIf="resultado.alquiler">Tipo: Alquiler</p>
-  <p *ngIf="!resultado.alquiler">Tipo: Venta</p>
-  <div *ngFor="let servicios of servicio">
-      <p>Servicios:</p>
-      <p>TV {{resultado.servicios.nombre}}</p>
-    </div>
-
+  <p> <i class="fa fa-home" aria-hidden="true"></i> Habitaciones: {{infocasa.habitaciones}} </p>
+  <p *ngIf="infocasa.alquiler">Tipo: Alquiler</p>
+  <p *ngIf="!infocasa.alquiler">Tipo: Venta</p>
+  
 </div>
