@@ -24,51 +24,5 @@ this.infocasa= new Casa();
 
   ngOnInit() {
 
-    /* console.log('TodosComponent ngOnInit');
-     this.servicioService.getCasas().subscribe(
-       resultado => {
-         console.debug('peticion correcta %o', resultado);
-         this.mapeo(resultado);
-       },
-       error => {
-         console.warn('peticion incorrecta %o', error);
-       }
-     );//subscribe*/
-  }
-  /*
-    mapeo(result: any) {
-  
-      let caracteristicas: alquiler, servicios: servicio;
-      result.forEach(el => {
-        caracteristicas = new alquiler();
-        caracteristicas.nombre = el.nombre;
-        caracteristicas.precio = el.precio;
-        caracteristicas.direccion = el.direccion;
-        caracteristicas.foto = el.foto;
-        caracteristicas.habitaciones = el.habitaciones;
-        caracteristicas.alquiler = el.alquiler;
-  
-  
-        el.servicio.forEach(s => {
-          servicios = new servicio();
-          servicios.nombre = s.nombre;
-          servicios.disponible = s.disponible;
-  
-  
-  
-          caracteristicas.servicio.push(servicios);
-  
-        }),
-  
-          this.vivienda.push(caracteristicas);
-  
-  
-  
-  
-  
-  
-      })
-  
-  
-  }*/
+    
 }
