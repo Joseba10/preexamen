@@ -1,10 +1,13 @@
+
+
 <div class="container">
 <h1>Inmobiliaria Alquila o Compra</h1>
-<div class="busqueda .col-sm-6">
+<div class="busqueda .col-md-6">
 <form>
-
+<div class="col-md-12">
 <label class="center-block">Buscar Casa:</label>
-<input type="text" placeholder="Buscar casa">
+<input type="search" placeholder="Buscar casa" >
+</div>
 <br>
 
 <label class="center-block">Alquiler:</label>
@@ -26,16 +29,16 @@ Precio  <label class="center-block">min:</label>
 </div> 
 
 <hr>
-<div   *ngFor="let resultado of vivienda" (click)="seleccionarcasa()" class="galeria .col-sm-6  ">
+<div   *ngFor="let casa of vivienda" (click)="CambioCasa(casa)" class="galeria .col-sm-6  ">
 
 
-  <img  src="{{resultado.foto}}">
-<p>Nombre: {{resultado.nombre}} Precio:  {{resultado.precio}}</p>
+  <img  src="{{casa.foto}}">
+<p>Nombre: {{casa.nombre}} Precio:  {{casa.precio}}</p>
   
 
   </div>
 
-<app-detalle></app-detalle>
+<app-detalle [Casa]="casaSelect"></app-detalle>
 
 
 

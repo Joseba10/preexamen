@@ -11,9 +11,11 @@ const END_POINT = "http://localhost:3000"; //Direccion del Servicio
 export class ServicioService{
 
 
-  constructor( public http: HttpClient) { console.log('ServicioService constructor');}
-
-
+  constructor( public http: HttpClient) { 
+    
+    console.log('ServicioService constructor');
+  
+  }
 
   getCasas():Observable<any>{
     let url = END_POINT + '/casas';

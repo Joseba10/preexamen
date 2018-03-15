@@ -1,7 +1,7 @@
 import { Component, OnInit,Input } from '@angular/core';
 import { Casa } from '../../model/casa';
 import { ServicioService } from '../../providers/servicio.service';
-import { Servicio } from '../../model/servicio';
+
 
 @Component({
   selector: 'app-detalle',
@@ -11,17 +11,14 @@ import { Servicio } from '../../model/servicio';
 export class DetalleComponent implements OnInit {
 
 
-  vivienda: Casa[];
-  servicios: ServicioService[];
-
-@Input ('casa') infocasa: Casa;
+@Input ('Casa') infocasa: Casa;
 
 
   constructor(public servicioService: ServicioService) {
   
 
 this.infocasa= new Casa();
-    this.vivienda = [];
+
     console.log("Informacion del input",this.infocasa);
   }
 

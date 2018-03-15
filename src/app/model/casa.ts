@@ -1,4 +1,4 @@
-import { ServicioService } from "../providers/servicio.service";
+
 import { Servicio } from "./servicio";
 
 export class Casa{  
@@ -10,10 +10,6 @@ export class Casa{
   foto:string;
   direccion:string;
  servicio:Servicio[];
-
-
-
-
 
 constructor( ){
     

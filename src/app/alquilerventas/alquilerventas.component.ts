@@ -17,17 +17,21 @@ import { Casa } from "../model/casa";
 export class AlquilerventasComponent implements OnInit {
   vivienda: Casa[];
   casaSelect: Casa;
-
-  constructor(public servicioService: ServicioService) {
+searchtext:string;
+  constructor(public ServicioService: ServicioService) {
     this.vivienda = [];
+
+    console.log("AlquilerventasComponent constructor");
   }
 
   ngOnInit() {
-    console.log("TodosComponent ngOnInit");
-    this.servicioService.getCasas().subscribe(
+    console.log("AlquilerventasComponent ngOnInit");
+    this.ServicioService.getCasas().subscribe(
+
       resultado => {
         console.debug("peticion correcta %o", resultado);
-        this.mapeo(resultado);
+        this.mapeo(resultado); 
+             this.casaSelect=this.vivienda[0] || new Casa;
       },
       error => {
         console.warn("peticion incorrecta %o", error);
@@ -36,27 +40,7 @@ export class AlquilerventasComponent implements OnInit {
   }
 
   mapeo(result: any) {
-    /*
-let c:casa,s:servicio;
-
-for (result => el{
-
-c=new casa();
-c.nombre=el.nombre
-
-for el.servicio => servicio{
-
-s=new servicio();
-s.nombre=servicio.nombre;
-c.servicios.push(s);
-
-
-}
-this.casa.push(c);
-  
-}
-
-*/
+   
 
     let caracteristicas: Casa; //servicios: servicio;
     result.forEach(el => {
@@ -81,16 +65,18 @@ this.casa.push(c);
       }),
 */
       this.vivienda.push(caracteristicas);
-console.log("Se acaba de meter la informacion al array %a",caracteristicas);
-
+      console.log(
+        "Se acaba de meter la informacion al array %a",
+        caracteristicas
+      );
     });
   }
 
-
-  seleccionarcasa(casa: Casa){
-
-console.log("seleccionarcasa");
-   this.casaSelect= casa ;
-   console.log("Infomacion de casaSelect",this.casaSelect);
+ CambioCasa(casa: Casa) {
+    console.log("seleccionarcasa");
+    this.casaSelect = casa;
+    console.log("Infomacion de casaSelect", this.casaSelect);
   }
+
+
 }

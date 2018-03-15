@@ -8,7 +8,7 @@ export class Servicio {
 
 
    this.nombre="";
-   this.disponible=true;
+   this.disponible=false;
 
 
   }
